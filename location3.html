@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Route Finder</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        input{
+            width:300px;
+            padding:10px;
+            margin:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tourist Route Finder</h1>
+
+<input type="text" id="start"
+       placeholder="Enter Starting Place">
+
+<br>
+
+<input type="text" id="destination"
+       placeholder="Enter Destination Place">
+
+<br><br>
+
+<button onclick="showRoute()">Show Route</button>
+
+<script>
+function showRoute()
+{
+    let start =
+    document.getElementById("start").value;
+
+    let destination =
+    document.getElementById("destination").value;
+
+    let url =
+    "https://www.google.com/maps/dir/"
+    + encodeURIComponent(start)
+    + "/"
+    + encodeURIComponent(destination);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

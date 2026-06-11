@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Place Reviews</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+            margin:0;
+            padding:20px;
+        }
+
+        .container{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#0077cc;
+        }
+
+        input{
+            width:75%;
+            padding:10px;
+            font-size:16px;
+            border-radius:5px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#007BFF;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .review-card{
+            margin-top:15px;
+            background:#f8f9fa;
+            padding:15px;
+            border-left:5px solid green;
+            border-radius:5px;
+        }
+
+        .username{
+            font-weight:bold;
+            color:#006600;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Tourist Place Review Viewer</h1>
+
+<input type="text" id="place" placeholder="Enter place name">
+<button onclick="searchReviews()">Search</button>
+
+<div id="reviews"></div>
+
+</div>
+
+<script>
+
+const placeReviews = {
+
+    "ooty":[
+        {
+            user:"Rahul",
+            rating:"⭐⭐⭐⭐⭐",
+            review:"Beautiful weather and excellent sightseeing."
+        },
+        {
+            user:"Priya",
+            rating:"⭐⭐⭐⭐",
+            review:"Tea gardens are amazing and very peaceful."
+        },
+        {
+            user:"Karthik",
+            rating:"⭐⭐⭐⭐⭐",
+            review:"Perfect destination for families."
+        }
+    ],
+
+    "goa":[
+        {
+            user:"Anu",
+            rating:"⭐⭐⭐⭐⭐",
+            review:"Wonderful beaches and nightlife."
+        },
+        {
+            user:"Suresh",
+            rating:"⭐⭐⭐⭐",
+            review:"Food was great and people were friendly."
+        }
+    ],
+
+    "chennai":[
+        {
+            user:"Meena",
+            rating:"⭐⭐⭐⭐",
+            review:"Marina Beach is worth visiting."
+        },
+        {
+            user:"Ajay",
+            rating:"⭐⭐⭐⭐⭐",
+            review:"Excellent temples and shopping malls."
+        }
+    ]
+
+};
+
+function searchReviews(){
+
+    let place=document.getElementById("place").value.toLowerCase().trim();
+
+    let output="";
+
+    if(placeReviews[place]){
+
+        output="<h2>Reviews for "+place.toUpperCase()+"</h2>";
+
+        placeReviews[place].forEach(function(item){
+
+            output+=`
+            <div class="review-card">
+                <p class="username">${item.user}</p>
+                <p>${item.rating}</p>
+                <p>${item.review}</p>
+            </div>
+            `;
+
+        });
+
+    }
+
+    else{
+
+        output=`
+        <div class="review-card">
+            <h3>No reviews available for this place.</h3>
+        </div>
+        `;
+
+    }
+
+    document.getElementById("reviews").innerHTML=output;
+
+}
+
+</script>
+
+</body>
+</html>

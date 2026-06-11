@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourist Safety Finder</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f8ff;
+    text-align:center;
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#0066cc;
+}
+
+input{
+    width:80%;
+    padding:10px;
+    font-size:18px;
+    margin:15px;
+    border-radius:5px;
+    border:1px solid gray;
+}
+
+button{
+    padding:10px 20px;
+    margin:8px;
+    border:none;
+    border-radius:5px;
+    background:#007BFF;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.emergency{
+    margin-top:30px;
+    text-align:left;
+    background:#fff8dc;
+    padding:15px;
+    border-radius:8px;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    padding:8px;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Tourist Guidance & Emergency Finder</h1>
+
+<input type="text" id="location" placeholder="Enter Location Name">
+
+<br>
+
+<button onclick="searchPlace('hospital')">Hospitals</button>
+
+<button onclick="searchPlace('restaurant')">Restaurants</button>
+
+<button onclick="searchPlace('hotel')">Hotels</button>
+
+<button onclick="searchPlace('police station')">Police Station</button>
+
+<button onclick="searchPlace('fire station')">Fire Station</button>
+
+<button onclick="searchPlace('pharmacy')">Pharmacy</button>
+
+<button onclick="searchPlace('atm')">ATM</button>
+
+<div class="emergency">
+
+<h2>Emergency Contact Numbers (India)</h2>
+
+<ul>
+
+<li>🚓 Police : <b>100</b></li>
+
+<li>🚑 Ambulance : <b>108</b></li>
+
+<li>🚒 Fire Service : <b>101</b></li>
+
+<li>☎ Emergency Response : <b>112</b></li>
+
+<li>👩 Women Helpline : <b>1091</b></li>
+
+<li>👶 Child Helpline : <b>1098</b></li>
+
+<li>🚗 Road Accident : <b>1073</b></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<script>
+
+function searchPlace(type){
+
+    let location = document.getElementById("location").value;
+
+    if(location==""){
+        alert("Please enter a location.");
+        return;
+    }
+
+    let url = "https://www.google.com/maps/search/" +
+              encodeURIComponent(type + " near " + location);
+
+    window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>

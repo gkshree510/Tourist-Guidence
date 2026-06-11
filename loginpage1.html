@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Guidance System - Login</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f0f8ff;
+        }
+
+        .container{
+            width:400px;
+            margin:80px auto;
+            background:rgb(144, 194, 227);
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgb(79, 228, 53);
+        }
+
+        h2{
+            text-align:center;
+            color:rgb(200, 23, 150);
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid #ac1ab7;
+            border-radius:5px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:darkblue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:royalblue;
+        }
+
+        p{
+            text-align:center;
+        }
+
+        a{
+            text-decoration:none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Login</h2>
+
+    <form action="login.php" method="post">
+
+        <select name="role" required>
+            <option value="">Select Role</option>
+            <option>User</option>
+            <option>Admin</option>
+            <option>Management</option>
+        </select>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p>
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+    </p>
+
+</div>
+
+</body>
+</html>

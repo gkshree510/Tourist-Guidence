@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Guidance Registration Form</title>
+
+    <script>
+    function showMessage() {
+    alert("Thank You! Your Tourist Registration Form has been submitted successfully.");
+    return true;
+    }
+    </script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .container{
+            width: 500px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2{
+            text-align: center;
+            color: darkblue;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]{
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover{
+            background-color: royalblue;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Tourist Guidance Registration Form</h2>
+
+    <form>
+
+        <label>Full Name</label>
+        <input type="text" name="fullname" required>
+
+        <label>Email ID</label>
+        <input type="email" name="email" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" name="mobile" required>
+
+        <label>Gender</label>
+        <select name="gender">
+            <option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Country</label>
+        <input type="text" name="country">
+
+        <label>Preferred Destination</label>
+        <select name="destination">
+            <option>Ooty</option>
+            <option>Kodaikanal</option>
+            <option>Chennai</option>
+            <option>Madurai</option>
+            <option>Kanyakumari</option>
+            <option>other</option>
+            <label>Preferred Destination</label>
+            <input type="text" name="destination" placeholder="Enter your destination" required>
+        </select>
+
+        <label>Travel Date</label>
+        <input type="date" name="travel_date">
+
+        <label>Number of Days</label>
+        <input type="number" name="days">
+
+        <label>Budget (₹)</label>
+        <input type="number" name="budget">
+
+        <label>Special Requirements</label>
+        <textarea rows="4"></textarea>
+
+        <input type="submit" value="Register">
+
+        <tr>
+        <td><input type="submit" id="submit" onclick="showalert()" name="submit"></td>
+        </tr>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

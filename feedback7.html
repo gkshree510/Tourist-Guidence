@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Feedback Form</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+            margin:0;
+            padding:20px;
+        }
+
+        .container{
+            max-width:700px;
+            margin:auto;
+            background:#fff;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#0077cc;
+        }
+
+        label{
+            font-weight:bold;
+            display:block;
+            margin-top:15px;
+        }
+
+        input, textarea, select{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        button{
+            margin-top:20px;
+            padding:12px 20px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#da58a4;
+        }
+
+        .review-card{
+            margin-top:20px;
+            padding:15px;
+            background:#f8f9fa;
+            border-left:5px solid rgb(142, 214, 33);
+            border-radius:5px;
+        }
+
+        .review-card h3{
+            margin:0;
+            color:#006600;
+        }
+
+        .score{
+            color:rgb(149, 173, 228);
+            font-size:18px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Tourist Place Feedback</h1>
+
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Place Visited</label>
+    <input type="text" id="place" placeholder="Enter place name">
+
+    <label>Score (1 - 5)</label>
+    <select id="score">
+        <option value="5">5 ⭐⭐⭐⭐⭐ - Excellent</option>
+        <option value="4">4 ⭐⭐⭐⭐ - Very Good</option>
+        <option value="3">3 ⭐⭐⭐ - Good</option>
+        <option value="2">2 ⭐⭐ - Average</option>
+        <option value="1">1 ⭐ - Poor</option>
+    </select>
+
+    <label>Your Feedback</label>
+    <textarea id="feedback" rows="5" placeholder="Write your experience..."></textarea>
+
+    <button onclick="submitReview()">Submit Feedback</button>
+
+    <hr>
+
+    <h2>Visitor Reviews</h2>
+
+    <div id="reviewList"></div>
+
+</div>
+
+<script>
+
+function submitReview(){
+
+    let name = document.getElementById("name").value;
+    let place = document.getElementById("place").value;
+    let score = document.getElementById("score").value;
+    let feedback = document.getElementById("feedback").value;
+
+    if(name=="" || place=="" || feedback==""){
+        alert("Please fill all the fields.");
+        return;
+    }
+
+    let stars = "";
+
+    for(let i=0;i<score;i++){
+        stars += "⭐";
+    }
+
+    let review = `
+        <div class="review-card">
+            <h3>${name}</h3>
+            <p><b>Place Visited:</b> ${place}</p>
+            <p class="score"><b>Score:</b> ${score}/5 ${stars}</p>
+            <p><b>Feedback:</b> ${feedback}</p>
+        </div>
+    `;
+
+    document.getElementById("reviewList").innerHTML =
+        review + document.getElementById("reviewList").innerHTML;
+
+    // Clear form
+    document.getElementById("name").value = "";
+    document.getElementById("place").value = "";
+    document.getElementById("feedback").value = "";
+    document.getElementById("score").selectedIndex = 0;
+}
+
+</script>
+
+</body>
+</html>

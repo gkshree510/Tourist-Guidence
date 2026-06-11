@@ -1,0 +1,209 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourist Guidance System Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:hsl(300, 8%, 97%);
+}
+
+header{
+    background:#0077cc;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:35px;
+}
+
+.dashboard{
+    width:90%;
+    margin:30px auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgb(26, 23, 23);
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    color:#2a12c1;
+    margin-bottom:15px;
+}
+
+.card p{
+    margin-bottom:20px;
+    color:#e1b420;
+}
+
+.card button{
+    padding:10px 20px;
+    background:#e53bdc;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#d944b4;
+}
+
+footer{
+    margin-top:40px;
+    background:#2612dd;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌍 Tourist Guidance System Dashboard</h1>
+
+<p>Travel Smart • Stay Safe • Explore More</p>
+
+</header>
+
+<div class="dashboard">
+
+<div class="cards">
+
+<div class="card">
+<h2>🔐 Login</h2>
+<p>Access your Tourist Guidance account.</p>
+<button onclick="location.href='login.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>📝 Registration</h2>
+<p>Register as a new tourist.</p>
+<button onclick="location.href='registration.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>🗺 Route Finder</h2>
+<p>Find the best route between two places.</p>
+<button onclick="location.href='routefinder.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>🏞 Tourist Guide</h2>
+<p>Discover famous tourist attractions.</p>
+<button onclick="location.href='touristguide.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>🚑 Emergency Finder</h2>
+<p>Locate hospitals, police stations, ATMs and more.</p>
+<button onclick="location.href='emergency.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>⭐ Place Reviews</h2>
+<p>Read reviews shared by other visitors.</p>
+<button onclick="location.href='reviews.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>✍ Tourist Feedback</h2>
+<p>Share your travel experience and ratings.</p>
+<button onclick="location.href='feedback.html'">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>📍 Google Maps</h2>
+<p>Open Google Maps for navigation.</p>
+<button onclick="window.open('https://maps.google.com','_blank')">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>🌤 Weather</h2>
+<p>Check weather before travelling.</p>
+<button onclick="window.open('https://www.google.com/search?q=weather','_blank')">
+Open
+</button>
+</div>
+
+<div class="card">
+<h2>☎ Emergency Numbers</h2>
+
+<p>
+Police : 100<br>
+Ambulance : 108<br>
+Fire : 101<br>
+Emergency : 112
+</p>
+
+<button onclick="alert('Police:100\nAmbulance:108\nFire:101\nEmergency:112')">
+View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+© 2026 Tourist Guidance System<br>
+Stay Safe • Travel Smart • Enjoy Your Journey
+</p>
+
+</footer>
+
+</body>
+</html>
+```

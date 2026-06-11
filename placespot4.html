@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Guidance System</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f0f8ff;
+            text-align:center;
+            margin:30px;
+        }
+
+        h1{
+            color:darkblue;
+        }
+
+        input{
+            width:300px;
+            padding:10px;
+            font-size:16px;
+        }
+
+        button{
+            padding:10px 20px;
+            margin:10px;
+            background-color:darkblue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color:royalblue;
+        }
+
+        #result{
+            margin-top:20px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px lightgray;
+        }
+
+        ul{
+            text-align:left;
+            display:inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Tourist Guidance System</h1>
+
+<input type="text"
+       id="interest"
+       placeholder="Enter Sunrise, Temple, Falls, Beach...">
+
+<br><br>
+
+<button onclick="suggestPlaces()">
+Find Places
+</button>
+
+<div id="result"></div>
+
+<script>
+
+function suggestPlaces()
+{
+    let choice =
+    document.getElementById("interest").value.toLowerCase();
+
+    let output="";
+
+    if(choice.includes("sunrise"))
+    {
+        output =
+        "<h2>Best Sunrise Places</h2>" +
+
+        "<button onclick=\"showDetails('kanyakumari')\">Kanyakumari Sunrise Point</button>" +
+
+        "<button onclick=\"showDetails('ooty')\">Doddabetta Peak, Ooty</button>" +
+
+        "<button onclick=\"showDetails('yelagiri')\">Yelagiri Hills</button>";
+    }
+
+    else if(choice.includes("temple"))
+    {
+        output =
+        "<h2>Famous Temples</h2>" +
+
+        "<button onclick=\"showDetails('meenakshi')\">Meenakshi Temple</button>" +
+
+        "<button onclick=\"showDetails('brihadeeswarar')\">Brihadeeswarar Temple</button>";
+    }
+
+    else if(choice.includes("falls"))
+    {
+        output =
+        "<h2>Beautiful Waterfalls</h2>" +
+
+        "<button onclick=\"showDetails('courtallam')\">Courtallam Falls</button>" +
+
+        "<button onclick=\"showDetails('hogenakkal')\">Hogenakkal Falls</button>";
+    }
+
+    else if(choice.includes("beach"))
+    {
+        output =
+        "<h2>Popular Beaches</h2>" +
+
+        "<button onclick=\"showDetails('marina')\">Marina Beach</button>" +
+
+        "<button onclick=\"showDetails('kanyakumaribeach')\">Kanyakumari Beach</button>";
+    }
+
+    else if(choice.includes("hill"))
+    {
+        output =
+        "<h2>Top Hill Stations</h2>" +
+
+        "<button onclick=\"showDetails('ooty')\">Ooty</button>" +
+
+        "<button onclick=\"showDetails('kodaikanal')\">Kodaikanal</button>";
+    }
+
+    else
+    {
+        output =
+        "<h2>No Suggestions Found</h2>" +
+        "<p>Try Sunrise, Temple, Falls, Beach or Hill Station</p>";
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+
+function showDetails(place)
+{
+    let details="";
+
+    if(place=="kanyakumari")
+    {
+        details=
+        "<h2>Kanyakumari Sunrise Point</h2>" +
+
+        "<p><b>Best Time:</b> 5:30 AM - 6:30 AM</p>" +
+
+        "<p><b>Special Attraction:</b> Sunrise view where three seas meet.</p>" +
+
+        "<h3>Nearby Places</h3>" +
+
+        "<ul>" +
+        "<li>Vivekananda Rock Memorial</li>" +
+        "<li>Thiruvalluvar Statue</li>" +
+        "<li>Gandhi Memorial</li>" +
+        "<li>Kanyakumari Beach</li>" +
+        "<li>Sunset Point</li>" +
+        "</ul>" +
+
+        "<h3>Suggested One Day Plan</h3>" +
+
+        "<ul>" +
+        "<li>6:00 AM - Sunrise View</li>" +
+        "<li>8:00 AM - Breakfast</li>" +
+        "<li>9:00 AM - Vivekananda Rock</li>" +
+        "<li>11:00 AM - Thiruvalluvar Statue</li>" +
+        "<li>1:00 PM - Lunch</li>" +
+        "<li>3:00 PM - Gandhi Memorial</li>" +
+        "<li>5:30 PM - Sunset Point</li>" +
+        "</ul>";
+    }
+
+    else if(place=="ooty")
+    {
+        details=
+        "<h2>Ooty</h2>" +
+
+        "<p><b>Best Time:</b> April to June</p>" +
+
+        "<p><b>Special Attraction:</b> Cool climate and scenic hills.</p>" +
+
+        "<h3>Nearby Places</h3>" +
+
+        "<ul>" +
+        "<li>Botanical Garden</li>" +
+        "<li>Ooty Lake</li>" +
+        "<li>Rose Garden</li>" +
+        "<li>Pykara Falls</li>" +
+        "</ul>";
+    }
+
+    else if(place=="yelagiri")
+    {
+        details=
+        "<h2>Yelagiri Hills</h2>" +
+
+        "<p><b>Best Time:</b> October to February</p>" +
+
+        "<p><b>Special Attraction:</b> Trekking and nature views.</p>" +
+
+        "<ul>" +
+        "<li>Punganur Lake</li>" +
+        "<li>Nature Park</li>" +
+        "<li>Jalagamparai Falls</li>" +
+        "</ul>";
+    }
+
+    else if(place=="meenakshi")
+    {
+        details=
+        "<h2>Meenakshi Temple</h2>" +
+
+        "<p><b>Location:</b> Madurai</p>" +
+
+        "<p><b>Best Time:</b> Morning 5 AM - 12 PM</p>" +
+
+        "<p><b>Special Attraction:</b> Ancient architecture and sculptures.</p>";
+    }
+
+    else if(place=="brihadeeswarar")
+    {
+        details=
+        "<h2>Brihadeeswarar Temple</h2>" +
+
+        "<p><b>Location:</b> Thanjavur</p>" +
+
+        "<p><b>UNESCO World Heritage Site</b></p>";
+    }
+
+    else if(place=="courtallam")
+    {
+        details=
+        "<h2>Courtallam Falls</h2>" +
+
+        "<p><b>Best Time:</b> June to September</p>" +
+
+        "<p><b>Special Attraction:</b> Natural medicinal water.</p>";
+    }
+
+    else if(place=="hogenakkal")
+    {
+        details=
+        "<h2>Hogenakkal Falls</h2>" +
+
+        "<p><b>Best Time:</b> July to October</p>" +
+
+        "<p><b>Special Attraction:</b> Boat rides.</p>";
+    }
+
+    else if(place=="marina")
+    {
+        details=
+        "<h2>Marina Beach</h2>" +
+
+        "<p><b>Location:</b> Chennai</p>" +
+
+        "<p><b>Best Time:</b> Evening</p>";
+    }
+
+    else if(place=="kanyakumaribeach")
+    {
+        details=
+        "<h2>Kanyakumari Beach</h2>" +
+
+        "<p><b>Special Attraction:</b> Sunrise and Sunset views.</p>";
+    }
+
+    else if(place=="kodaikanal")
+    {
+        details=
+        "<h2>Kodaikanal</h2>" +
+
+        "<p><b>Best Time:</b> April to June</p>" +
+
+        "<p><b>Nearby Places:</b> Coaker's Walk, Kodai Lake, Pillar Rocks</p>";
+    }
+
+    document.getElementById("result").innerHTML = details;
+}
+
+</script>
+
+</body>
+</html>
